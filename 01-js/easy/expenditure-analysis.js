@@ -39,7 +39,7 @@ function calculateTotalSpentByCategory(transactions) {
 
   transactions.forEach((transaction) => {
     const { category, price } = transaction;
-    if (category in cateoryTotalAmount) {
+    if (cateoryTotalAmount[category]) {
       cateoryTotalAmount[category] += price;
     } else {
       cateoryTotalAmount[category] = price;
@@ -52,4 +52,5 @@ function calculateTotalSpentByCategory(transactions) {
 }
 
 console.log(calculateTotalSpentByCategory(items));
+
 module.exports = calculateTotalSpentByCategory;
